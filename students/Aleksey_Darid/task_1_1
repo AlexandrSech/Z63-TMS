@@ -1,0 +1,7 @@
+print("Hello world")
+a=5
+b=2.3
+c="str test"
+d=True
+print(a,b,c,d)
+
