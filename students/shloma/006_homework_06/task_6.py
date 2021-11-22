@@ -109,3 +109,12 @@ for i in range(n):
 
 print("9) Измененная матрица:")
 [print(*matrix[i], sep="\t\t", end="\n") for i in range(n)]
+
+# 6.10) Set to zero lower elements:
+for i in range(n):
+    for j in range(m):
+        if j < i:
+            matrix[i][j] = 0
+
+print("\n10) Измененная матрица:")
+[print(*matrix[i], sep="\t\t", end="\n") for i in range(n)]
