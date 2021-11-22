@@ -77,3 +77,13 @@ for j in range(m):
         max_col_ind = j
 
 print(f"6) Индекс столбца с максимальной суммой элементов: {max_col_ind}")
+
+# 6.7) Search ROW with MIN SUM of elements:
+min_row = sum(matrix[0])
+min_row_ind = 0
+for i in range(n):
+    if sum(matrix[i]) < min_row:
+        min_row = sum(matrix[i])
+        min_row_ind = i
+
+print(f"7) Индекс ряда с минимальной суммой элементов: {min_row_ind}")
