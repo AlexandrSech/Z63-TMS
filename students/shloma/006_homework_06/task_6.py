@@ -118,3 +118,17 @@ for i in range(n):
 
 print("\n10) Измененная матрица:")
 [print(*matrix[i], sep="\t\t", end="\n") for i in range(n)]
+
+# 6.11) Generate matrix_a and matrix_b elements:
+matrix_a, matrix_b = [], []
+
+for _ in range(n):
+    matrix_a.append([randint(a, b) for _ in range(m)])
+    matrix_b.append([randint(a, b) for _ in range(m)])
+
+# Print matrix
+print("\n11) Исходная матрица A:")
+[print(*matrix_a[i], sep="\t\t", end="\n") for i in range(n)]
+
+print("\nИсходная матрица B:")
+[print(*matrix_b[i], sep="\t\t", end="\n") for i in range(n)]
