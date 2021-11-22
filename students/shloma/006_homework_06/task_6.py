@@ -45,3 +45,12 @@ for i in range(n):
 print(f"3) Минимальный элемент матрицы: {min_mtx}")
 # or
 # print(f"Минимальный элемент матрицы: {min([min(matrix[i]) for i in range(n)])}")
+
+# 6.4) Search SUM of element:
+total = 0
+for i in range(n):
+    total += sum(matrix[i])
+
+print(f"4) Сумма всех элементов матрицы: {total}")
+# or
+# print(f"Сумма всех элементов матрицы: {sum([sum(matrix[i]) for i in range(n)])}")
