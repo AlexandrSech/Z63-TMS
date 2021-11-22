@@ -132,3 +132,13 @@ print("\n11) Исходная матрица A:")
 
 print("\nИсходная матрица B:")
 [print(*matrix_b[i], sep="\t\t", end="\n") for i in range(n)]
+
+# 6.12) Generate matrix_sum:
+matrix_sum = [[] for _ in range(n)]
+
+for i in range(n):
+    for j in range(m):
+        matrix_sum[i].append(matrix_a[i][j] + matrix_b[i][j])
+
+print("\nРезультирующая матрица (сложение matrix_a + matrix_b):")
+[print(*matrix_sum[i], sep="\t\t", end="\n") for i in range(n)]
