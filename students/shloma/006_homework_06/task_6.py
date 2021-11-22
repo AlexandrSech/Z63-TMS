@@ -152,3 +152,16 @@ for i in range(n):
 
 print("\nРезультирующая матрица (вычитание matrix_a - matrix_b):")
 [print(*matrix_diff[i], sep="\t\t", end="\n") for i in range(n)]
+
+# 6.14) Generate matrix_mult:
+matrix_mult = [[] for _ in range(n)]
+
+g = int(input("\nВведите множитель для matrix_a [g]: "))
+# g = 4
+
+for i in range(n):
+    for j in range(m):
+        matrix_mult[i].append(matrix_a[i][j] * g)
+
+print("Результирующая матрица (умножение matrix_a * g):")
+[print(*matrix_mult[i], sep="\t\t", end="\n") for i in range(n)]
