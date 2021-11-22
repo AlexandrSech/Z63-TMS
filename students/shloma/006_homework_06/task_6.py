@@ -100,3 +100,12 @@ for j in range(m):
         min_col_ind = j
 
 print(f"8) Индекс столбца с минимальной суммой элементов: {min_col_ind}")
+
+# 6.9) Set to zero upper elements:
+for i in range(n):
+    for j in range(m):
+        if j > i:
+            matrix[i][j] = 0
+
+print("9) Измененная матрица:")
+[print(*matrix[i], sep="\t\t", end="\n") for i in range(n)]
