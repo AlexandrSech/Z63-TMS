@@ -23,3 +23,14 @@ for _ in range(n):
 # Print matrix
 print("\n1) Исходная матрица:")
 [print(*matrix[i], sep="\t\t", end="\n") for i in range(n)]
+
+# 6.2) Search MAX element:
+max_mtx = max(matrix[0])
+
+for i in range(n):
+    if max(matrix[i]) > max_mtx:
+        max_mtx = max(matrix[i])
+
+print(f"\n2) Максимальный элемент матрицы: {max_mtx}")
+# or
+# print(f"Максимальный элемент матрицы: {max([max(matrix[i]) for i in range(n)])}")
