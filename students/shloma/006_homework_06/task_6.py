@@ -55,7 +55,7 @@ print(f"4) Сумма всех элементов матрицы: {total}")
 # or
 # print(f"Сумма всех элементов матрицы: {sum([sum(matrix[i]) for i in range(n)])}")
 
- 6.5) Search ROW with MAX SUM of elements:
+# 6.5) Search ROW with MAX SUM of elements:
 max_row = sum(matrix[0])
 max_row_ind = 0
 for i in range(n):
@@ -64,3 +64,16 @@ for i in range(n):
         max_row_ind = i
 
 print(f"5) Индекс ряда с максимальной суммой элементов: {max_row_ind}")
+
+# 6.6) Search COL with MAX SUM of elements:
+max_col_sum, max_col_ind = 0, 0
+
+for j in range(m):
+    s = 0
+    for i in range(n):
+        s += matrix[i][j]
+    if s > max_col_sum:
+        max_col_sum = s
+        max_col_ind = j
+
+print(f"6) Индекс столбца с максимальной суммой элементов: {max_col_ind}")
