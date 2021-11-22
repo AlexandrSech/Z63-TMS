@@ -87,3 +87,16 @@ for i in range(n):
         min_row_ind = i
 
 print(f"7) Индекс ряда с минимальной суммой элементов: {min_row_ind}")
+
+# 6.8) Search COL with MIN SUM of elements:
+min_col_sum, min_col_ind = 0, 0
+
+for j in range(m):
+    s = 0
+    for i in range(n):
+        s += matrix[i][j]
+    if s < min_col_sum:
+        min_col_sum = s
+        min_col_ind = j
+
+print(f"8) Индекс столбца с минимальной суммой элементов: {min_col_ind}")
