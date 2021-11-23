@@ -14,7 +14,7 @@ for i in x:
         max_= i
     if len(i) < len(min_):
         min_ = i
-print('hello')
+        
 print(min_, len(min_))
 print(max_, len(max_))
 
