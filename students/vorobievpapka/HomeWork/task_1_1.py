@@ -1,8 +1,8 @@
-a = int(input())
-b = int(input())
-summa = a + b
+a = 10
+b = 6
 raznost = a - b
-s = a * b
-print(summa)
-print(raznost)
-print(s)
+summ = a + b
+proizvedenie = a + b
+print ('Разность равняется',raznost)
+print("Сумма равняется",summ)
+print("Произведение равняется",proizvedenie)
