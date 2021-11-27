@@ -3,28 +3,21 @@
 n = 15  # Fibonacci length
 
 # Use while
-fib_list = [1]
+fib_list = [1, 1]
 
 i = 1       # Loops counter
-prev = 0    # Previous number
-cur = 1     # Current number
 
-while i < n:
-    prev, cur = cur, prev + cur
-    fib_list.append(cur)
+while len(fib_list) < n:
+    fib_list.append(sum(fib_list[-2:]))
     i += 1
 
 print("\nFibonacci (use while):\n", fib_list)
 
 
 # Use for
-fib_list2 = [1]
+fib_list2 = [1, 1]
 
-prev = 0
-cur = 1
-
-for i in range(1, n):
-    prev, cur = cur, prev + cur
-    fib_list2.append(cur)
+for i in range(n - 2):
+    fib_list2.append(sum(fib_list2[-2:]))
 
 print("\nFibonacci (use for:)\n", fib_list2)
