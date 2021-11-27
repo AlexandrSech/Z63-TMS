@@ -12,6 +12,7 @@ def is_str_polyndrom(s):
     return True if s.lower() == s.lower()[::-1] else False
 
 
+# Test
 words = ["lol", "топот", "lolli", "powop", "student"]
 s = "А роза упала на лапу Азора"
 

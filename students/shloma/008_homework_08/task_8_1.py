@@ -15,6 +15,7 @@ def fact2(n):
     return fact
 
 
+# Test
 nums = [randint(1, 20) for _ in range(5)]
 [print(f"Number: {n}, factorial: {fact2(n)}") for n in nums]
 
