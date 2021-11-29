@@ -8,6 +8,5 @@ for guests in range(0, 60):
     elif guests >=5 and guests <= 50:
         print('Если колличество гостей составит', str(guests), ' человек - заказываем кафе!')
     else:
-        guests < 50
         print('Если колличество гостей составит', str(guests), ' человек - заказываем ресторан')
 
