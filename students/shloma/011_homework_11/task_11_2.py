@@ -8,11 +8,12 @@ class Car:
         self.__year = year
         self.__speed = speed
 
-    def get_speed(self):
-        print(self.__speed)
-        # return self.__speed
+    @property
+    def speed(self):
+        return self.__speed
 
-    def get_name(self):
+    @property
+    def name(self):
         return self.__brand, self.__model
 
     def speed_up(self):
@@ -33,6 +34,8 @@ class Car:
 
 if __name__ == "__main__":
     car = Car("WW", "Polo", 2017, 55)
+    car.get_info()
+    print(*car.name, car.speed)
     car.get_info()
     car.speed_up()
     car.get_info()

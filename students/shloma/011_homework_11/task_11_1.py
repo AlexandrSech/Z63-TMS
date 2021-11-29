@@ -7,25 +7,31 @@ class Cat:
         self.__age = age
         self.__color = color
 
-    def get_age(self):
+    @property
+    def age(self):
         return self.__age
 
-    def get_name(self):
+    @property
+    def name(self):
         return self.__name
 
-    def get_color(self):
+    @property
+    def color(self):
         return self.__color
 
-    def set_age(self, age):
+    @age.setter
+    def age(self, age):
         if 1 < age < 25:
             self.__age = age
         else:
             print("Введен неверный возраст")
 
-    def set_name(self, name):
+    @name.setter
+    def name(self, name):
         self.__name = name
 
-    def set_color(self, color):
+    @color.setter
+    def color(self, color):
         self.__color = color
 
     def say_meow(self):
@@ -42,28 +48,36 @@ class Car:
         self.__power = power
         self.__color = color
 
-    def get_brand(self):
+    @property
+    def brand(self):
         return self.__brand
 
-    def get_model(self):
+    @property
+    def model(self):
         return self.__model
 
-    def get_power(self):
+    @property
+    def power(self):
         return self.__power
 
-    def get_color(self):
+    @property
+    def color(self):
         return self.__color
 
-    def set_brand(self, brand):
+    @brand.setter
+    def brand(self, brand):
         self.__brand = brand
 
-    def set_model(self, model):
+    @model.setter
+    def model(self, model):
         self.__model = model
 
-    def set_power(self, power):
+    @power.setter
+    def power(self, power):
         self.__power = power
 
-    def change_color(self, color):
+    @color.setter
+    def color(self, color):
         if color.lower() in ["red", "green", "blue", "yellow", "black", "white", "gray"]:
             self.__color = color
         else:
@@ -85,34 +99,53 @@ class FPGA:
         self.__available_loots = luts
         self.__package = package
 
-    def get_type(self):
+    # Properties
+    @property
+    def type(self):
         return self.__type
 
-    def get_family(self):
+    @property
+    def family(self):
         return self.__family
 
-    def get_name(self):
+    @property
+    def name(self):
         return self.__name
 
-    def get_luts_status(self):
+    @property
+    def luts(self):
         return self.__luts, self.__available_loots
 
-    def get_package(self):
+    @property
+    def package(self):
         return self.__package
 
-    def set_type(self, type: str):
+    # Setters
+    @type.setter
+    def type(self, type: str):
         self.__type = type
 
-    def set_name(self, name: str):
+    @name.setter
+    def name(self, name: str):
         self.__name = name
 
-    def set_family(self, family):
+    @family.setter
+    def family(self, family):
         self.__family = family
 
-    def set_luts(self, luts: int):
+    @luts.setter
+    def luts(self, luts: int):
         self.__available_loots = self.__available_loots + (luts - self.__luts)
         self.__luts = luts
 
+    @package.setter
+    def package(self, package: str):
+        if package in ["FFVB900", "FFVB1560", "FFVB676", "FFVT900", "FFVT1156", "BGA900"]:
+            self.__package = package
+        else:
+            print("Error! This type of package doesn't exists")
+
+    # Methods
     def hold_luts(self, luts: int):
         if self.__available_loots - luts < 0:
             print(f"Don't have {luts} free luts. Now {self.__available_loots} are available")
@@ -121,12 +154,6 @@ class FPGA:
 
     def reset_loots(self):
         self.__available_loots = self.__luts
-
-    def set_package(self, package: str):
-        if package in ["FFVB900", "FFVB1560", "FFVB676", "FFVT900", "FFVT1156", "BGA900"]:
-            self.__package = package
-        else:
-            print("Error! This type of package doesn't exists")
 
 
 class Computer:
@@ -137,20 +164,37 @@ class Computer:
         self.__video_adapter = video_adapter
         self.__free_memory = memory_size
 
-    def get_type(self):
+    @property
+    def type(self):
         return self.__type
 
-    def get_proc(self):
+    @property
+    def proc(self):
         return self.__processor
 
-    def get_memory_size(self):
+    @property
+    def memory(self):
         return self.__memory_size
 
-    def get_free_memory(self):
+    @property
+    def free_memory(self):
         return self.__free_memory
 
-    def get_video_adapter(self):
+    @property
+    def video_adapter(self):
         return self.__video_adapter
+
+    @type.setter
+    def type(self, type: str):
+        self.__type = type
+
+    @proc.setter
+    def proc(self, proc: str):
+        self.__processor = proc
+
+    @memory.setter
+    def memory(self, memory):
+        self.__memory_size = memory
 
     def run_task(self, mem_size: int):
         if self.__free_memory < mem_size:
@@ -182,31 +226,40 @@ class Gun:
         self.__weight = weight
         self.__distance = distance
 
-    def get_model(self):
+    @property
+    def model(self):
         return self.__model
 
-    def get_weight(self):
+    @property
+    def weight(self):
         return self.__weight
 
-    def get_distance(self):
+    @property
+    def distance(self):
         return self.__distance
 
-    def get_patrons_info(self):
+    @property
+    def patrons(self):
         return self.__shots
 
-    def magazin_size(self):
+    @property
+    def magazin(self):
         return self.__magazin
 
-    def set_model(self, model: str):
+    @model.setter
+    def model(self, model: str):
         self.__model = model
 
-    def set_weight(self, weight: float):
+    @weight.setter
+    def weight(self, weight: float):
         self.__weight = weight
 
-    def set_distance(self, len: int):
+    @distance.setter
+    def distance(self, len: int):
         self.__distance = len
 
-    def set_magazin_size(self, size: int):
+    @magazin.setter
+    def magazin(self, size: int):
         self.__magazin = size
         self.__shots = size
 
@@ -232,7 +285,10 @@ if __name__ == "__main__":
         M = Cat("Tom", 4, "black")
 
         M.disp_info()
+        M.age = 5
         M.say_meow()
+
+        print(f"Cat {M.name}, age: {M.age}, color: {M.color}")
 
     def testing_car():
         print("Car Testing")
@@ -241,9 +297,9 @@ if __name__ == "__main__":
 
         C.honk()
         C.get_info()
-        C.change_color("cyan")
+        C.color = "cyan"
         C.get_info()
-        C.change_color("gray")
+        C.color = "gray"
         C.get_info()
 
     def testing_fpga():
@@ -251,19 +307,19 @@ if __name__ == "__main__":
 
         kc410 = FPGA("FPGA", "Kintex-7", "KC410T", 5600, "BGA900")
 
-        print(kc410.get_type(), kc410.get_family(), kc410.get_name(), kc410.get_package())
-        print(kc410.get_luts_status())
+        print(kc410.type, kc410.family, kc410.name, kc410.package)
+        print(kc410.luts)
         kc410.hold_luts(5000)
-        print(kc410.get_luts_status())
+        print(kc410.luts)
         kc410.hold_luts(500)
-        print(kc410.get_luts_status())
+        print(kc410.luts)
         kc410.hold_luts(200)
         kc410.reset_loots()
-        print(kc410.get_luts_status())
+        print(kc410.luts)
         kc410.hold_luts(500)
-        print(kc410.get_luts_status())
-        kc410.set_luts(7000)
-        print(kc410.get_luts_status())
+        print(kc410.luts)
+        kc410.luts = 7000
+        print(kc410.luts)
 
     def testing_comp():
         print("Computer Testing")
@@ -305,6 +361,7 @@ if __name__ == "__main__":
         gun.reload()
         gun.show_info()
         gun.shot()
+        print(gun.patrons, gun.magazin)
 
     # Testing
     testing_cat()
