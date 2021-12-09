@@ -13,5 +13,5 @@ def r(x):
         i += 1
     return f
 
-print(d(6))
-print(r(6))
+print(d(7))
+print(r(7))
