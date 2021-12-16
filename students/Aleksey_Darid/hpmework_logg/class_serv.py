@@ -1,10 +1,21 @@
+from os import name
 import class_client
+from dec_logg import timeit
 
-messages ={}
+users = []
+messages = {}
+@timeit
 def serv():
-    messages.update(class_client.user())
-    print(messages)
+    messages.update(class_client.User.user())
+    users.append(class_client.User.user1())
+    print(users, messages)
+
+
+def send_m():
+    
 
 
 
-   
+if __name__=="__main__":
+    serv()   
+    send_m()

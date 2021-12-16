@@ -1,20 +1,15 @@
-import logging
+from loguru import logger
 
-logfile = 'log_1.log'
+def timeit(foo):
+    def wrapper():
+        logger.add("logg.log",
+        format="{time}::{level}::{message}",
+        level="DEBUG",
+        rotation= "10 Mb")
+        logger.debug("Start foo")
+        result = foo()
+        logger.debug("Finish foo")
 
-log = logging.getLogger("my_log")
-log.setLevel(logging.INFO)
-FH = logging.FileHandler(logfile)
-basic_formater = logging.Formatter('%(asctime)s : [%(levelname)s] : %(message)s')
-FH.setFormatter(basic_formater)
-log.addHandler(FH)
+        return result
+    return wrapper
 
-A = [i for i in range(5)]
-log.info("start program")
-try:
-    for i in range(6):
-        print (A[i]**2)
-        log.info("program calculate square " + str(A[i]))
-except:
-	log.error("произошла ошибка")
-log.info("end program")
