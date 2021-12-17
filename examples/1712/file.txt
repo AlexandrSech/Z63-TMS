@@ -1,0 +1,3 @@
+Иван Иванов|ivanov@mail.ru|Password123
+Дима Петров|superman@mail.ru|sdfbvsdfbsb
+Вася Пупкин|pupok@mail.ru|qwerty1234|13.14.15
