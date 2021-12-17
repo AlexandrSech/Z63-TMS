@@ -1,0 +1,6 @@
+2021-12-16 19:52:12,966 - __main__ - INFO -  message send suck
+2021-12-16 19:52:12,966 - __main__ - INFO -  message send suck
+2021-12-16 19:54:17,114 - __main__ - DEBUG -  message send suck
+2021-12-16 19:54:17,114 - __main__ - DEBUG -  message send suck
+2021-12-16 19:55:31,957 - __main__ - INFO -  message send suck
+2021-12-16 19:55:31,957 - __main__ - INFO -  message send suck
