@@ -1,0 +1,7 @@
+2021-12-16 00:12:19,009 - __main__ - INFO - sdafasdf
+2021-12-16 00:12:19,009 - __main__ - INFO - sdafasdf
+2021-12-16 00:12:19,009 - __main__ - INFO - sdafasdf
+2021-12-16 00:13:03,874 - __main__ - INFO - sdafasdf
+2021-12-16 00:13:03,875 - __main__ - INFO - sdafasdf
+2021-12-16 00:13:03,875 - __main__ - ERROR - Unaoth
+2021-12-16 00:13:37,159 - __main__ - ERROR - Unaoth
