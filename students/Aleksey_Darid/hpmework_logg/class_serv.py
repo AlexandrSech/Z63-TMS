@@ -1,18 +1,16 @@
-from os import name
+from loguru import logger
 import class_client
-from dec_logg import timeit
+users_m = []
 
-users = []
-messages = {}
-@timeit
+
+@logger.catch
 def serv():
-    messages.update(class_client.User.user())
-    users.append(class_client.User.user1())
-    print(users, messages)
+    users_m.append(class_client.User.user())
+    print(users_m)
 
 
 def send_m():
-    
+    pass
 
 
 
