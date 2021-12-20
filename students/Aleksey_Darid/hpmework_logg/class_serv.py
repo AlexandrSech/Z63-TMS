@@ -1,19 +1,15 @@
 from loguru import logger
-import class_client
-users_m = []
+import socket
 
 
-@logger.catch
-def serv():
-    users_m.append(class_client.User.user())
-    print(users_m)
+server = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+server.bind(("127.0.0.1", 1124))
 
+server.listen()
 
-def send_m():
-    pass
+while True:
+    user, adres = server.accept()
 
-
-
-if __name__=="__main__":
-    serv()   
-    send_m()
+    user.send(input().encode("utf-8"))
+    data = user.recv(1024)
+    print(data.decode("utf-8"))
