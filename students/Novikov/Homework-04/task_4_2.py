@@ -1,6 +1,10 @@
 # 2) Дан список целых чисел. Подсчитать сколько четных чисел в списке
 
-my_list = list(range(3, 17, 3))
+import random
+
+my_list = list()
+for _ in range(0, 100):
+    my_list.append(random.randint(0, 100))
 print(my_list)
 
 counter1 = 0
