@@ -2,5 +2,5 @@
 
 num = int(input("Input your number: "))
 
-if not num % 1000:
+if num % 1000 == 0:
     print("millennium")

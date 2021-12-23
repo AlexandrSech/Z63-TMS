@@ -4,10 +4,7 @@
 my_list = list(range(10))
 print(my_list)
 
-new_list1 = list()
-for num in my_list:
-    new_list1.append(-2 * num)
-
+new_list1 = [num * -2 for num in my_list]
 print(new_list1)
 
 new_list2 = list()
