@@ -11,14 +11,11 @@ my_dict = {'test': 'test_value',
 my_dict2 = my_dict.copy()
 for key in list(my_dict.keys()):
     my_dict[key + str(len(key))] = my_dict.pop(key)
-print(my_dict)
+print("with for: ", my_dict)
 
 keys = list(my_dict2.keys())
 i = 0
 while i < len(keys):
     my_dict2[keys[i] + str(len(keys[i]))] = my_dict2.pop(keys[i])
     i += 1
-print(my_dict2)
-
-
-
+print("with while: ", my_dict2)

@@ -20,6 +20,9 @@ while True:
                 print("Результат операции:{}\n".format(X - Y))
                 break
             elif sign == "/":
+                if Y == 0:
+                    print("На ноль делить нельзя!")
+                    break
                 print("Результат операции:{}\n".format(X / Y))
                 break
             elif sign == "*":

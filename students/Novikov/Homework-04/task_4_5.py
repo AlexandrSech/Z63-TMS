@@ -20,17 +20,27 @@ def fibonacci2(my_new_list, n):
     return my_new_list
 
 
-num = 15
+def fibonacci3(my_new_list, n):
+    my_new_list.append(1)
+    my_new_list.append(1)
+    for i in range(2, n):
+        my_new_list.append(my_new_list[i - 1] + my_new_list[i - 2])
+    return my_new_list
 
-i = 0
+
+num = 15
 print("Первая попытка:")
 my_list = list()
-while i < num:
+for i in range(0, num):
     my_list.append(fibonacci(i))
-    i += 1
 print(my_list)
 
 print("Вторая попытка:")
 my_list2 = list()
 my_list2 = fibonacci2(my_list2, num)
 print(my_list2)
+
+print("Третья попытка:")
+my_list3 = list()
+my_list3 = fibonacci3(my_list3, num)
+print(my_list3)
