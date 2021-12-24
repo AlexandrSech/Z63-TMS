@@ -3,10 +3,10 @@
 my_list = list(map(int, input()))
 print(my_list)
 
-sum, mult = 0, 1
+summ, mult = 0, 1
 for el in my_list:
-    sum += el
+    summ += el
     mult *= el
 
-print("Сумма:", sum)
+print("Сумма:", summ)
 print("Произведение: ", mult)
