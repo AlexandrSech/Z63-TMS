@@ -5,20 +5,12 @@ import random
 
 my_list = list()
 for _ in range(0, 19):
-    my_list.append(random.randint(10, 100))
+    my_list.append(random.randint(0, 100))
 print(my_list)
 
-max = my_list[0]
-counter = 1
-while counter < len(my_list):
-    if max < my_list[counter]:
-        max = my_list[counter]
-    counter += 1
+maxim = max(my_list)
 
-i = 0
-while i < len(my_list):
+for i in range(0, len(my_list)):
     if my_list[i] % 2 == 0:
-        my_list[i] = max
-    i += 1
-
+        my_list[i] = maxim
 print(my_list)

@@ -11,8 +11,7 @@ def fibonacci(n):
 
 
 def fibonacci2(my_new_list, n):
-    my_new_list.append(1)
-    my_new_list.append(1)
+    my_new_list = [1, 1]
     i = 2
     while i < n:
         my_new_list.append(my_new_list[i - 1] + my_new_list[i - 2])
@@ -21,8 +20,7 @@ def fibonacci2(my_new_list, n):
 
 
 def fibonacci3(my_new_list, n):
-    my_new_list.append(1)
-    my_new_list.append(1)
+    my_new_list = [1, 1]
     for i in range(2, n):
         my_new_list.append(my_new_list[i - 1] + my_new_list[i - 2])
     return my_new_list
