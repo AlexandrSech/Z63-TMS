@@ -5,7 +5,7 @@ import random
 
 my_list = list()
 for _ in range(0, 100):
-    my_list.append(random.randint(0, 100))
+    my_list.append(random.randint(-100, 100))
 print(my_list)
 
 i = 1
