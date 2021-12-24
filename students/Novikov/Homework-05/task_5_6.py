@@ -4,15 +4,13 @@
 import random
 
 my_list = list()
-for _ in range(0, 100):
+for _ in range(100):
     my_list.append(random.randint(-100, 100))
 print(my_list)
 
-i = 1
 count_of_intervals = 0
 temp = my_list[0]
-while i < len(my_list):
-
+for _ in range(1, len(list))
 
 
 
