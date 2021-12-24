@@ -4,7 +4,7 @@
 import random
 
 my_list = list()
-for _ in range(0, 19):
+for _ in range(20):
     my_list.append(random.randint(0, 100))
 print(my_list)
 
