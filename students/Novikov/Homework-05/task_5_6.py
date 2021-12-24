@@ -3,7 +3,7 @@
 
 import random
 
-lst = [random.randint(0, 20) for el in range(40)]
+lst = [random.randint(0, 20) for el in range(10)]
 print(lst)
 result = 0
 count = 0

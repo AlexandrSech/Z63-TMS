@@ -1,7 +1,11 @@
 """ 1) Дан список целых чисел.
 Создать новый список, каждый элемент которого равен исходному элементу умноженному на -2 """
 
-my_list = list(range(10))
+import random
+
+my_list = list()
+for _ in range(10):
+    my_list.append(random.randint(0, 100))
 print(my_list)
 
 new_list1 = [num * -2 for num in my_list]
@@ -13,4 +17,3 @@ while counter < len(my_list):
     new_list2.append(-2 * my_list[counter])
     counter += 1
 print(new_list2)
-
