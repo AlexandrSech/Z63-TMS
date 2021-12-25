@@ -3,16 +3,24 @@
 
 import random
 
-lst = [random.randint(0, 20) for el in range(10)]
-print(lst)
-result = 0
-count = 0
-for j in range(len(lst) - 2):
-    if lst[j + 2] > lst[j + 1] > lst[j]:
-        count += 1
-    elif count >= 1 and lst[j + 1] > lst[j + 2]:
-        result += 1
-        count = 0
-if lst[-1] > lst[-2] > lst[-3]:
-    result += 1
-print(result)
+array = [random.randint(-100, 100) for _ in range(10)]
+print(array)
+
+number_of_ranges = 0
+cols_item = 0
+prev_item = None
+for item in array:
+    try:
+        if item < prev_item and cols_item >= 1:
+            number_of_ranges += 1
+            cols_item = 0
+
+        if item > prev_item:
+            cols_item += 1
+
+    except:
+        prev_item = item
+
+if cols_item:
+    number_of_ranges += 1
+print(number_of_ranges)
