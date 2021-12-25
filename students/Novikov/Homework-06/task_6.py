@@ -128,4 +128,3 @@ for i in range(0, n):
     matrix_e.append([matrix_a[i][j] * g for j in range(0, m)])
 print("Матрица D: ")
 print_matrix(matrix_e)
-
