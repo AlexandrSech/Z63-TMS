@@ -1,11 +1,11 @@
 """5) В массиве целых чисел с количеством элементов 19 определить максимальное число и
 заменить им все четные по значению элементы."""
 
-import random
+from random import randint
 
 my_list = list()
 for _ in range(20):
-    my_list.append(random.randint(0, 100))
+    my_list.append(randint(0, 100))
 print(my_list)
 
 maxim = max(my_list)

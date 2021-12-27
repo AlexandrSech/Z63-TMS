@@ -1,9 +1,9 @@
 """6) Задан целочисленный массив. Определить количество участков массива,
 на котором элементы монотонно возрастают (каждое следующее число больше предыдущего)."""
 
-import random
+from random import randint
 
-array = [random.randint(-100, 100) for _ in range(10)]
+array = [randint(-100, 100) for _ in range(10)]
 print(array)
 
 number_of_ranges = 0
