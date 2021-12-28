@@ -1,13 +1,22 @@
-"""
 # Task 14.1
 # shlom41k
+
+"""
+Написать программу таймер. Программа при запуске принимает имя, фамилию, часы, минуты и секунды.
+После программа начинает обратный отсчет выводя оставшееся время.
+Программа должна хранить файл логирования с информацией о том кто запускал программу и когда.
 """
 
 from datetime import datetime
-from play_sound import *
+from play_sound import play_siren, sleep
+
+# Constants
+LOG_FILE = "timer.log"
 
 
 class MyTimer:
+
+    __logfile = LOG_FILE
 
     def __init__(self, firstname: str, lastname: str, hh: int, mm: int, ss: int):
         self.__firstname = firstname
@@ -73,12 +82,12 @@ class MyTimer:
     def log(self):
         now = datetime.now()
         dt = "{:04}-{:02}-{:02} {:02}:{:02}:{:02}".format(now.year, now.month, now.day, now.hour, now.minute, now.second)
-        with open("timer.log", "a") as logfile:
+        with open(self.__class__.__logfile, "a") as logfile:
             print(f"{self.__firstname} {self.__lastname}, {dt}", file=logfile)
 
     # Start timer
     def run_timer(self):
-        print("\nTimer activated!")
+        print(f"\n{self.__firstname}! Attention! Timer activated!")
         self.log()
         seconds = self.mytime_to_sec(self.__hh, self.__mm, self.__ss)
 
@@ -93,5 +102,6 @@ class MyTimer:
 
 
 if __name__ == "__main__":
-    my_timer = MyTimer("Sergey", "shlom41k", hh=0, mm=0, ss=3)
+    my_timer = MyTimer("Sergey", "shlom41k", hh=0, mm=0, ss=2)
     my_timer.run_timer()
+

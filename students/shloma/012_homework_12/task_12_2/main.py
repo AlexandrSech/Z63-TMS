@@ -3,7 +3,9 @@
 # shlom41k
 """
 
+
 from classes import Point, Figure, Circle, Triangle, Square
+
 
 if __name__ == "__main__":
 

@@ -1,4 +1,6 @@
 # homework 15
+# shlom41k
+
 
 from sqlalchemy.orm import sessionmaker
 from tabulate import tabulate

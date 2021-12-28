@@ -1,11 +1,14 @@
 # Task 9.4
 # shlom41k
 
+"""
+Создать универсальный декоратор, который меняет порядок аргументов в функции на противоположный
+"""
+
 
 def my_decorator(my_func):
     def wrapper(*args):
-        args = args[::-1]   # Меняем порядок аргументов
-        my_func(args)
+        my_func(args[::-1])     # Меняем порядок аргументов
     return wrapper
 
 
@@ -15,8 +18,16 @@ def print_args(*args):
     [print(*arg, sep=" ") for arg in args]
 
 
-# Test
-print_args("first", 1, 4, 6, 8, "a", "last")
+if __name__ == "__main__":
+
+    # Test
+
+    # Исходные данные
+    args = ("first", 1, [4], 6, 8, {1: True}, "a", "last")
+    print(*args)
+
+    # Результат выполнения обернутой функции
+    print_args(*args)
 
 
 

@@ -1,3 +1,18 @@
+# homework 15
+# shlom41k
+
+"""
+-> Создать таблицу продуктов. Атрибуты продукта: id, название, цена, количество, комментарий.
+-> Реализовать CRUD (создание, чтение, обновление по id, удаление по id) для продуктов.
+-> Создать пользовательский интерфейс.
+
+# Project structure:
+# |- ui.py
+# |   |- crud.py
+# |      |- db_creator.py
+# |- prod.db
+"""
+
 from crud import *
 
 
@@ -7,6 +22,15 @@ class UserInterface:
         CRUD.connect_to_db()
 
         while True:
+
+            tasks = {
+                "1": CRUD.show_all,
+                "2": self.create_product,
+                "3": self.get_product,
+                "4": self.update_product,
+                "5": self.delete_product,
+            }
+
             print("\n[1] Show table\n"
                   "[2] Create product\n"
                   "[3] Get product (by ID, by NAME)\n"
@@ -19,18 +43,7 @@ class UserInterface:
             if op == "0":
                 break
 
-            if op == "1":
-                CRUD.show_all()
-            elif op == "2":
-                self.create_product()
-            elif op == "3":
-                self.get_product()
-            elif op == "4":
-                self.update_product()
-            elif op == "5":
-                self.delete_product()
-            else:
-                print("ERROR: Unknown operation")
+            tasks.get(op, lambda: print(f"ERROR: Unknown operation '{op}'"))()
 
     def create_product(self):
         while True:
