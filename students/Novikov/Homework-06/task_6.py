@@ -1,4 +1,4 @@
-import random
+from random import randint
 
 a = 0
 b = 20
@@ -7,7 +7,7 @@ b = 20
 def make_matrix(n, m):
     matrix = list()
     for _ in range(n):
-        matrix.append([random.randint(a, b) for _ in range(m)])
+        matrix.append([randint(a, b) for _ in range(m)])
     return matrix
 
 
