@@ -1,28 +1,43 @@
 # Task 9.3
 # shlom41k
 
+"""
+Создать декоратор для функции, которая принимает список чисел.
+Декоратор должен производить предварительную проверку данных - удалять все четные элементы из списка.
+"""
+
+from random import randint
+
 
 def my_decorator(my_func):
     # print('Входим в декоратор')
     def wrapper(lst):
         # print('Входим в функцию-обёртку')
         # print('Выполняем предварительную фильтрацию данных - удаляем четные элементы')
-        [lst.pop(i) for i, v in enumerate(lst) if not v % 2]
+        new_lst = [elem for elem in lst if elem % 2]
         # print('Выполняем обёрнутую функцию...')
-        my_func(lst)
+        my_func(new_lst)
         # print('Выходим из обёртки')
     # print('Выходим из декоратора')
     return wrapper
 
 
 @my_decorator
+# Исходная функция тупо выводит список в консоль
 def print_list(lst: list):
     print(lst)
 
 
-# Test
-l = [1, 2, 3, 4, 5, 6, 7, 8, 10, 13, 15, 20]
-print_list(l)
+if __name__ == "__main__":
+
+    # Test
+
+    # Исходный список
+    my_list = [randint(-100, 100) for _ in range(20)]
+    print(my_list)
+
+    # Результат выполнения обернутой функции
+    print_list(my_list)
 
 
 
