@@ -3,6 +3,7 @@
 # shlom41k
 """
 
+
 from math import pi, sqrt
 from abc import abstractmethod
 
@@ -15,10 +16,12 @@ class Point:
         self.__x = x
         self.__y = y
 
-        Point.__point_cnt += 1
+        # Point.__point_cnt += 1
+        self.__class__.__point_cnt += 1
 
     def __del__(self):
-        Point.__point_cnt -= 1
+        # Point.__point_cnt -= 1
+        self.__class__.__point_cnt -= 1
 
     def __str__(self):
         return f"({self.__x}; {self.__y})"
@@ -44,7 +47,7 @@ class Point:
         self.__y = y
 
     def get_info(self):
-        return (f"Point ({self.__x}; {self.__y})")
+        return f"Point ({self.__x}; {self.__y})"
 
 
 class Figure:
@@ -72,11 +75,14 @@ class Circle(Figure):
         self.__center = center
         self.__radius = r
 
-        Circle.__circles_cnt += 1
+        # Circle.__circles_cnt += 1
+        self.__class__.__circles_cnt += 1
         Figure._figures_cnt += 1
+        # self.__class__._figures_cnt += 1
 
     def __del__(self):
-        Circle.__circles_cnt -= 1
+        # Circle.__circles_cnt -= 1
+        self.__class__.__circles_cnt -= 1
         Figure._figures_cnt -= 1
 
     def __str__(self):
@@ -111,7 +117,7 @@ class Circle(Figure):
         return round(pi * self.__radius ** 2, 3)
 
     def get_info(self):
-        return(f"Circle: center - point ({self.__center.x}, {self.__center.y}), radius - {self.__radius}")
+        return f"Circle: center - point ({self.__center.x}, {self.__center.y}), radius - {self.__radius}"
 
 
 class Triangle(Figure):
@@ -123,11 +129,13 @@ class Triangle(Figure):
         self.__b = b
         self.__c = c
 
-        Triangle.__triangle_cnt += 1
+        # Triangle.__triangle_cnt += 1
+        self.__class__.__triangle_cnt += 1
         Figure._figures_cnt += 1
 
     def __del__(self):
-        Triangle.__triangle_cnt -= 1
+        # Triangle.__triangle_cnt -= 1
+        self.__class__.__triangle_cnt -= 1
         Figure._figures_cnt -= 1
 
     def __str__(self):
@@ -179,7 +187,7 @@ class Triangle(Figure):
         return round(sqrt(pp * (pp - s1) * (pp - s2) * (pp - s3)), 3)
 
     def get_info(self):
-        return(f"Triangle: A({self.__a.x}, {self.__a.y}), B({self.__b.x}, {self.__b.y}), C({self.__c.x}, {self.__c.y})")
+        return f"Triangle: A({self.__a.x}, {self.__a.y}), B({self.__b.x}, {self.__b.y}), C({self.__c.x}, {self.__c.y})"
 
 
 class Square(Figure):
@@ -190,11 +198,13 @@ class Square(Figure):
         self.__x1 = x1
         self.__x2 = x2
 
-        Square.__square_cnt += 1
+        # Square.__square_cnt += 1
+        self.__class__.__square_cnt += 1
         Figure._figures_cnt += 1
 
     def __del__(self):
-        Square.__square_cnt -= 1
+        # Square.__square_cnt -= 1
+        self.__class__.__square_cnt -= 1
         Figure._figures_cnt -= 1
 
     def __str__(self):
@@ -234,7 +244,7 @@ class Square(Figure):
         return round(self.str_calc() ** 2, 3)
 
     def get_info(self):
-        return(f"Square: x1({self.__x1.x}, {self.__x1.y}), x2({self.__x2.x}, {self.__x2.y})")
+        return f"Square: x1({self.__x1.x}, {self.__x1.y}), x2({self.__x2.x}, {self.__x2.y})"
 
 
 if __name__ == "__main__":

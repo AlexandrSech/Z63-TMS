@@ -2,6 +2,9 @@
 # shlom41k
 
 """
+Создать csv файл с данными о ежедневной погоде. Структура: Дата, Место, Градусы, Скорость ветра.
+Найти среднюю погоду (скорость ветра и градусы) для Минска за последние 7 дней.
+
 # Use https://openweathermap.org/ to get temperature history for cities
 """
 
@@ -79,7 +82,10 @@ if __name__ == "__main__":
 
         d, c, tm, vv = line[0].split(";")
 
-        if (datetime.datetime.strptime(d, "%Y-%m-%d %H:%M:%S") < datetime.datetime.now() - datetime.timedelta(days=5)) or (c != 'Minsk'):
+        if c != "Minsk":
+            continue
+
+        if (datetime.datetime.strptime(d, "%Y-%m-%d %H:%M:%S") < datetime.datetime.now() - datetime.timedelta(days=5)):
             continue
 
         tmp += float(tm)

@@ -3,6 +3,7 @@
 
 from random import randint
 
+
 array = [randint(-100, 100) for _ in range(10)]
 print(array)
 

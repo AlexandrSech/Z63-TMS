@@ -1,6 +1,11 @@
+# homework 15
+# shlom41k
+
+
 from sqlalchemy import create_engine
 from sqlalchemy import Column, Integer, String, DECIMAL
 from sqlalchemy.ext.declarative import declarative_base
+
 
 DATABASE = "sqlite:///prod.db"
 TABLE_NAME = 'products'

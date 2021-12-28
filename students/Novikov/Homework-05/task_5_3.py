@@ -7,10 +7,7 @@ def foo(num):
     for n in range(1, num):
         if num % n == 0:
             my_list.append(n)
-    sum = 0
-    for el in my_list:
-        sum += el
-    return sum
+    return sum(my_list)
 
 
 my_dict = dict()
