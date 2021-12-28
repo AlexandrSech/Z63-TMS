@@ -2,6 +2,10 @@
 # homework 16
 
 """
+-> Создать таблицы Brand(name), Car(model, release_year, brand (foreing key на таблицу Brand)).
+-> Реализовать CRUD(создание, чтение, обновление по id, удаление по id) для бренда и машины.
+-> Создать пользовательский интерфейс.
+
 # Create main file for homework #16 (User Interface)
 
 # project structure:
@@ -10,6 +14,7 @@
 # |      |- db_creator.py
 # |         |- models.py
 """
+
 
 from crud import CRUD, session
 
@@ -222,16 +227,6 @@ class User:
                 continue
 
             while True:
-                # new_brand = input(f"Input car brand (see table 'Brands') [old: {car.brand}]: ").title()
-                #
-                # if new_brand == "":
-                #     brand = car.brand
-                # else:
-                #     brand = self._crud.select_brand(name=new_brand)
-                #
-                #     if not brand:
-                #         print(f"ERROR: No brand '{new_brand}' in tables 'Brands'! Create brand '{new_brand}' at first!")
-                #         break
 
                 car_model = input(f"Input car model [old: '{car.model}']: ")
                 car_year = input(f"Input car year of release [old: '{car.release_year}']: ")
