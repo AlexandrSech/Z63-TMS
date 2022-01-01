@@ -1,7 +1,7 @@
-"""
 # Task 14.1
 # shlom41k
 
+"""
 Project struct
 # main.py
 # |- timer.py
@@ -20,9 +20,11 @@ Project struct
 # -h -> h (hours)
 # -m -> m (minutes)
 # -s -> s (seconds)
+
+# for example: python main.py -fn Sergey -ln shlom41k -s 10
 """
 
-from timer import *
+from timer import MyTimer
 from argparser import timer_argparse
 
 

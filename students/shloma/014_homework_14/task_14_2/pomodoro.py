@@ -4,10 +4,16 @@
 """
 
 from datetime import datetime
-from play_sound import *
+from play_sound import play_jingle, sleep
+
+
+# Constants
+LOG_FILE = "pomodoro.log"
 
 
 class Pomodoro:
+
+    __logfile = LOG_FILE
 
     def __init__(self, firstname: str, lastname: str, focusing=25, pause=5, cycles=4, task="Programming"):
         self.__firstname = firstname
@@ -84,7 +90,7 @@ class Pomodoro:
         now = datetime.now()
         dt = "{:04}-{:02}-{:02} {:02}:{:02}:{:02}".format(now.year, now.month, now.day, now.hour, now.minute,
                                                           now.second)
-        with open("pomodoro.log", "a") as logfile:
+        with open(self.__class__.__logfile, "a") as logfile:
             print(f"{self.__firstname} {self.__lastname}, {dt}, focusing: {self.__focusing} min, "
                   f"pause: {self.__pause} min, cycles: {self.__cycles}; task: {self.__task}", file=logfile)
 

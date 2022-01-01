@@ -3,11 +3,7 @@
 
 from random import randint
 
-<<<<<<< HEAD
 array = [randint(-100, 100) for _ in range(10)]
-=======
-array = [random.randint(-100, 100) for _ in range(10)]
->>>>>>> 2e89258f99b264ed4bd4abe46de3e8dd08b297aa
 print(array)
 
 number_of_ranges = 0

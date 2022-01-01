@@ -21,9 +21,11 @@ Project struct
 # -p -> pause: time to break (in minutes) [int]
 # -c -> cycle: number of cycles [int]
 # -t -> task : task description [str]
+
+# for example: python main.py -fn Sergey -ln shlom41k -c 3
 """
 
-from pomodoro import *
+from pomodoro import Pomodoro
 from argparser import pomodoro_argparse
 
 

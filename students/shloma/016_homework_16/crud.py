@@ -5,6 +5,7 @@
 # Create CRUD class for homework #16
 """
 
+
 from db_creator import Brand, Car, session
 from tabulate import tabulate
 
