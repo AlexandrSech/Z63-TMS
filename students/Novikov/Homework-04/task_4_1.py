@@ -3,9 +3,7 @@
 
 from random import randint
 
-my_list = list()
-for _ in range(0, 20):
-    my_list.append(randint(-20, 20))
+my_list = [randint(-20, 20) for _ in range(0, 20)]
 print(my_list)
 
 new_list1 = [num * -2 for num in my_list]

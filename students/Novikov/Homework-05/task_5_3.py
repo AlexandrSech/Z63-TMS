@@ -3,10 +3,7 @@
 
 
 def foo(num):
-    my_list = list()
-    for n in range(1, num):
-        if num % n == 0:
-            my_list.append(n)
+    my_list = [n for n in range(1, num) if num % n == 0]
     return sum(my_list)
 
 
