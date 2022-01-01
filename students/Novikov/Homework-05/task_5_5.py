@@ -3,9 +3,7 @@
 
 from random import randint
 
-my_list = list()
-for _ in range(20):
-    my_list.append(randint(0, 100))
+my_list = [randint(0, 100) for _ in range(20)]
 print(my_list)
 
 for i in range(0, len(my_list)):

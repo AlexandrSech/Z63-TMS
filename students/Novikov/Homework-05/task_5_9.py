@@ -3,10 +3,7 @@
 
 
 def find_divisors(num):
-    my_list = list()
-    for i in range(2, num):
-        if num % i == 0:
-            my_list.append(i)
+    my_list = [i for i in range(2, num) if num % i == 0]
     print(f"{num}:", end=" ")
     print(*my_list)
 

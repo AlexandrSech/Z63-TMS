@@ -3,4 +3,4 @@
 
 f = lambda **kwargs: {key * 2: value for key, value in kwargs.items()}
 
-print(f(abc= 5, one = "Texas"))
+print(f(abc=5, one="Texas"))

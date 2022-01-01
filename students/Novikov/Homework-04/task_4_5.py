@@ -28,9 +28,7 @@ def fibonacci3(my_new_list, n):
 
 num = 15
 print("Первая попытка:")
-my_list = list()
-for i in range(0, num):
-    my_list.append(fibonacci(i))
+my_list = [fibonacci(i) for i in range(0, num)]
 print(my_list)
 
 print("Вторая попытка:")
