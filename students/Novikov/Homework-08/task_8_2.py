@@ -3,7 +3,8 @@
 (Определить функцию, позволяющую распознавать слова палиндромы.)"""
 
 
-def is_palindrome(word): return word.lower() == word.lower()[::-1]
+def is_palindrome(word):
+    return word.lower() == word.lower()[::-1]
 
 
 my_list = input("Введите 3 слова: ").split()

@@ -6,9 +6,7 @@ from random import randint
 
 
 def fact2(n):
-    if n < 2:
-        return 1
-    return n * fact2(n - 2)
+    return 1 if n < 2 else n * fact2(n - 2)
 
 
 my_list = [randint(0, 20) for _ in range(0, 5)]
