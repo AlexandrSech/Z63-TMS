@@ -8,5 +8,4 @@ str1 = str0[(len(str0) // 2)]
 print(str1)
 
 if str0[0] == str1:
-    str2 = str0[1:-1]
-    print(str2)
+    print(str0[1:-1])
