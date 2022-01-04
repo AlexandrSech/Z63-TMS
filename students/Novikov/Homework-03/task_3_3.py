@@ -4,7 +4,6 @@
 str0 = input("Input your string: ")
 
 if len(str0) > 10:
-    str1 = "!!!"
-    print(str1)
+    print("!!!")
 elif len(str0) < 10:
     print("Второй символ строки:", str0[1])
