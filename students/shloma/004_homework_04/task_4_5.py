@@ -1,10 +1,16 @@
 # Task 4.5
+# shlom41k
+
+"""
+Составить список чисел Фибоначчи содержащий 15 элементов
+"""
+
 
 n = 15  # Fibonacci length
 
+
 # Use while
 fib_list = [1, 1]
-
 i = 1       # Loops counter
 
 while len(fib_list) < n:
