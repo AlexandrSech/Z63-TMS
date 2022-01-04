@@ -4,7 +4,7 @@ sin(x) = x – x ^3 /(3!) + x^ 5 /(5!) – ... + (–1) ^ n · x^( 2·n+1) /((2�
 В сумме учитывать все слагаемые, модуль которых больше ε .
 С помощью Sin1 найти приближенное значение синуса для данного x при шести данных ε """
 
-from math import sin, factorial
+from math import sin, factorial, pi
 from random import uniform
 
 
@@ -19,7 +19,7 @@ def sin1(x, eps):
 
 
 eps = 0.1
-random_float = uniform(-1, 1)
+random_float = uniform(-pi, pi)
 for _ in range(6):
     print("Разница: ", abs(sin(random_float) - sin1(random_float, eps)))
     eps /= 10
