@@ -19,7 +19,8 @@ def sin1(x, eps):
 
 
 eps = 0.1
-random_float = uniform(-pi, pi)
+random_value = uniform(-pi, pi)
+print(f"Случайная величина: {random_value}\t Значение синуса: {sin(random_value)}\n", end="")
 for _ in range(6):
-    print("Разница: ", abs(sin(random_float) - sin1(random_float, eps)))
+    print("Разница: ", abs(sin(random_value) - sin1(random_value, eps)))
     eps /= 10
