@@ -8,7 +8,7 @@ my_dict = {'test': 'test_value',
            'dollar': 'usd',
            'ruble': 'rub'
            }
-my_dict2 = my_dict.copy()
+my_dict2 = dict(my_dict)
 for key in list(my_dict.keys()):
     my_dict[key + str(len(key))] = my_dict.pop(key)
 print("with for: ", my_dict)
