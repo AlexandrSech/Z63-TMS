@@ -3,8 +3,7 @@
 
 
 def foo(num):
-    my_list = [n for n in range(1, num) if num % n == 0]
-    return sum(my_list)
+    return sum([n for n in range(1, num) if num % n == 0])
 
 
 my_dict = dict()
@@ -12,5 +11,5 @@ for i in range(200, 301):
     for j in range(201, 301):
         if i == foo(j) and j == foo(i):
             my_dict[i] = j
-            print("Дружеская пара {i} - {i2}".format(i=i, i2=my_dict[i]))
+            print(f"Дружеская пара {i} - {my_dict[i]}")
 print(my_dict)

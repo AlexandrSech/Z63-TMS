@@ -6,14 +6,13 @@ from random import randint
 
 def my_decorator(func):
     def the_wrapper(my_list):
-        new_list = [elem for elem in my_list if elem % 2]
-        func(new_list)  # Сама функция
+        func([elem for elem in my_list if elem % 2])  # Сама функция
 
     return the_wrapper  # Вернём эту функцию
 
 
 @my_decorator
-def my_func(my_list: list):
+def my_func(my_list):
     print(my_list)
 
 

@@ -3,9 +3,8 @@
 
 
 def find_divisors(num):
-    my_list = [i for i in range(2, num) if num % i == 0]
     print(f"{num}:", end=" ")
-    print(*my_list)
+    print(*[i for i in range(2, num) if num % i == 0])
 
 
 m = int(input("Введите первое число: "))

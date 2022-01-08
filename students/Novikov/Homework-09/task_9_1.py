@@ -9,6 +9,6 @@ my_strs = ["Hello, shlom41k",
            "London is the capital of Great Britan",
            ]
 
-[print(f"{ind} - {s}") for ind, s in enumerate(my_strs)]
+[print(f"{i} - {string}") for i, string in enumerate(my_strs)]
 
 # Спасибо, Шломчик
