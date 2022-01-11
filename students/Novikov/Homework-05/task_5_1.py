@@ -32,3 +32,4 @@ while True:
             break
         else:
             print("Повторите ввод")
+            break
