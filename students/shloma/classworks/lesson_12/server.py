@@ -23,15 +23,16 @@ def login():
 @app.route("/message", methods=["GET", "POST"])
 def message():
     if request.method == "GET":
-        return str({"message": "", "token": ""}).replace("'", "\"")
+        return str({"message": {"user": "", "text": ""}, "token": ""}).replace("'", "\"")
     elif request.method == "POST":
         server.get_message(request.json["message"], request.json["token"])
-        return ""
+        return "Message sent to server"
 
 
 @app.route("/message_list", methods=["GET"])
 def message_list():
-    return str(server.send_list(request.json["token"]))
+    ans = server.send_list(request.json["token"])
+    return str(ans) if ans is not None else "Unknown user"
 
 
 if __name__ == "__main__":

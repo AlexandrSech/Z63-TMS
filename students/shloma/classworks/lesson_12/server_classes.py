@@ -23,8 +23,9 @@ class Auth:
             return self.add_user(creds)
         return False
 
-    def generate_token(self):
-        token = str(time)
+    @staticmethod
+    def generate_token():
+        token = str(time())
         return token
 
     def add_user(self, creds: dict):
@@ -69,27 +70,6 @@ class Server(Auth, Chat):
 
 if __name__ == "__main__":
 
-    auth = Auth()
-
     s1 = Server()
+    print(s1.generate_token())
 
-    tests = [
-        {"func": auth.check_user, "tests":
-         [
-             [{"login": "user", "password": "12345"}, time],
-             [{"login": "user5", "password": "12345"}, False],
-             [{}, False],
-             [{"login": "user5"}, False],
-             [124234234234, False],
-             ["124234234234", False],
-         ]},
-    ]
-
-    for func in tests:
-        for test in func["tests"]:
-            result = func["func"](test[0])
-            print(f"Test for func '{func}'")
-            print(f"Args={test[0]}")
-            print(f"Result = {result}, available result={test[1]}")
-            print(True if result == test[1] else False)
-            print()
