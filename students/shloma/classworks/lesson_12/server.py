@@ -20,13 +20,22 @@ def login():
     return str(server.check_user(request.json))
 
 
+@app.route("/logout", methods=["GET"])
+def logout():
+    if server.delete_user(request.json["token"]):
+        return f"User deleted"
+    else:
+        return f"Unknown user"
+
+
 @app.route("/message", methods=["GET", "POST"])
 def message():
     if request.method == "GET":
         return str({"message": {"user": "", "text": ""}, "token": ""}).replace("'", "\"")
     elif request.method == "POST":
-        server.get_message(request.json["message"], request.json["token"])
-        return "Message sent to server"
+        if server.get_message(request.json["message"], request.json["token"]):
+            return "Message sent to server"
+        return f"Unknown user"
 
 
 @app.route("/message_list", methods=["GET"])

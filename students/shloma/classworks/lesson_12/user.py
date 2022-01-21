@@ -7,6 +7,7 @@ import requests
 
 url = "http://127.0.0.1:5000/"
 url_login = url + "login"
+url_logout = url + "logout"
 url_message = url + "message"
 url_message_list = url + "message_list"
 
@@ -23,12 +24,23 @@ class User:
         self._login = login
         self._password = password
 
+    def __call__(self, message: str):
+        self.send_message(message_text=message)
+
     def login_to_server(self):
         """
         # Регистрация на сервере
         """
         r = requests.post(url_login, json={"login": self._login, "password": self._password})
         self._token = r.text
+
+    def logout_from_server(self):
+        """
+        # Выход из аккаунта на сервере
+        """
+        r = requests.get(url_logout, json={"token": self._token})
+        self._token = ""
+        return r.text
 
     def get_message(self):
         """
@@ -73,10 +85,17 @@ if __name__ == "__main__":
 
     user1 = User(login=user_list["login"], password=user_list["password"])
     user1.login_to_server()
+    print(user1.token)
     user1.get_message()
-    # print(user1.message_format)
+    print(user1.message_format)
     print(user1.send_message("Bla bla bla"))
     print(user1.get_messages_list())
+    user1("Assssssssssssaaaaaaaa")
+    user1("Assssssssssssaaaaaaaa")
+    print(user1.get_messages_list())
+    print(user1.logout_from_server())
+    print(user1.logout_from_server())
+    print(user1.send_message("Bla bla bla"))
 
 
 """
