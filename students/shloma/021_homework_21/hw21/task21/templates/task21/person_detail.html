@@ -1,0 +1,25 @@
+{% extends "task21/base.html" %}
+
+
+{% block title %}
+    {{ Person }}
+{% endblock %}
+
+
+{% block content %}
+    <h2>Person {{ person }}</h2>
+    <ul>
+        <li><h3>ID: {{person.id}}</h3></li>
+        <li><h3>Name: {{person.firstname}}</h3></li>
+        <li><h3>Surname: {{person.lastname}}</h3></li>
+        <li><h3>Age: {{person.age}}</h3></li>
+        <li><h3>Profession: {{person.profession}}</h3></li>
+    </ul>
+
+    <p>
+        <a href="{% url 'index' %}"><button type="submit" style="height:25px; width:65px">Home</button></a>
+        <a href="{% url 'person_edit' person_id=person.id %}"><button type="submit" style="height:25px; width:65px">Edit</button></a>
+        <a href="{% url 'person_delete' person_id=person.id %}"><button type="submit" style="height:25px; width:65px">Delete</button></a>
+    </p>
+
+{% endblock %}
