@@ -1,0 +1,21 @@
+{% extends "products/base.html" %}
+
+
+{% block title %} Products {% endblock %}
+
+
+{% block content %}
+
+    <h2>Hello, its a PRODUCTS page</h2>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+
+        {% for d in data %}
+            Product name: {{ d.good.name }}, amount: {{ d.form.current_amont }}<br>
+        {% endfor %}
+
+        <br><input type="submit" value="Send">
+    </form>
+
+{% endblock %}
