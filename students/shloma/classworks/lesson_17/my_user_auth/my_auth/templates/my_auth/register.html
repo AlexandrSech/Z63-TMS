@@ -1,0 +1,42 @@
+{% extends "my_auth/base.html" %}
+
+
+{% block title %} Registration {% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <form class="form-signin" method="POST" action="{% url 'register' %}">
+        {% csrf_token %}
+
+        <h1 class="h3 mb-3 mt-3 mx-auto font-weight-normal">Для регистрации укажите имя пользователя и пароль</h1>
+
+<!--        <p>-->
+<!--            <label for="inputUsername" class="sr-only">Имя пользователя</label>-->
+<!--            {{ form.username }}-->
+<!--            {{ form.username.errors }}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label for="inputPassword" class="sr-only">Пароль</label>-->
+<!--            {{ form.password }}-->
+<!--            {{ form.password.errors }}-->
+<!--        </p>-->
+<!--        <p>-->
+<!--            <label for="ReInputPassword" class="sr-only">Повторите пароль</label>-->
+<!--            {{ form.repeat_password }}-->
+<!--            {{ form.repeat_password.errors }}-->
+<!--        </p>-->
+        {% for field in form %}
+        <p>
+            <label for="{{ field.label }}" class="sr-only">{{ field.label }}</label>
+            {{ field }}
+
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </p>
+        {% endfor %}
+
+        <button class="btn mt-2 btn-lg btn-primary btn-block" type="submit">Регистрация</button>
+    </form>
+</div>
+{% endblock %}
