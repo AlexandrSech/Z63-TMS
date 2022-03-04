@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
-from .forms import RegistrationForm, LoginForm
+from .forms import RegistrationForm
 from django.views.decorators.csrf import csrf_exempt
 from .models import MyUser
 
@@ -47,6 +47,7 @@ def registration(request):
 @csrf_exempt
 def login(request):
     if request.method == "GET":
+        # print(request.session.get("visites"))
         return render(request, "my_auth/login.html", {})
     elif request.method == "POST":
         users_data = RegistrationForm(request.POST)
@@ -54,16 +55,30 @@ def login(request):
         user = MyUser.objects.filter(login=users_data.data["login"])
         if user:
             if user[0].password == users_data.data["password"]:
+                request.session["login"] = users_data.data["login"]
                 return redirect("http://127.0.0.1:8000/main")
             else:
-                return HttpResponse("wrong password")
+                return render(request, "my_auth/login.html", {"error_message": "wrong password"})
         else:
-            return HttpResponse("no user like this")
+            return render(request, "my_auth/login.html", {"error_message": "no user like this"})
 
 
 def logout(request):
+    if "login" in request.session:
+        del request.session["login"]
+    print(request.session)
     return redirect("http://127.0.0.1:8000/login")
 
 
 def main(request):
-    return render(request, "my_auth/main.html", {})
+    """if "visited" in request.session:
+        request.session["visited"] += 1
+    else:
+        request.session["visited"] = 1"""
+
+    """request.session["visites"] = request.session.get("visites", 0) + 1
+    print(request.session.get("visites"))"""
+
+    if request.session.get("login", None):
+        return render(request, "my_auth/main.html", {})
+    return redirect("http://127.0.0.1:8000/login")
