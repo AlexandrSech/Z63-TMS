@@ -1,11 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
-<p>Some main page</p>
-<p><a href="http://127.0.0.1:8000/logout">logout</a></p>
-</body>
-</html>
+{% extends "my_auth/base.html" %}
+
+{% block content %}
+
+{% if is_login %}
+    <p>You are super user!!!!</p>
+    <p><a href="{% url 'logout'%}">logout</a></p>
+{% else %}
+    <form action="{% url 'main'%}" method="POST">
+        <p><input type="text" name="login"></p>
+        <p><input type="text" name="password"></p>
+        <p><input type="submit"></p>
+    </form>
+
+    <p>Hello world</p>
+{% endif %}
+
+{% endblock %}
