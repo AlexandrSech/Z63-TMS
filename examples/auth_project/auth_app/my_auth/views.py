@@ -66,19 +66,26 @@ def login(request):
 def logout(request):
     if "login" in request.session:
         del request.session["login"]
-    print(request.session)
-    return redirect("http://127.0.0.1:8000/login")
+    return redirect("/main/")
 
 
+@csrf_exempt
 def main(request):
-    """if "visited" in request.session:
-        request.session["visited"] += 1
-    else:
-        request.session["visited"] = 1"""
+    if request.method == "GET":
+        return render(request, "my_auth/main.html", {"is_login": request.session.get("login", False)})
+    elif request.method == "POST":
+        users_data = RegistrationForm(request.POST)
 
-    """request.session["visites"] = request.session.get("visites", 0) + 1
-    print(request.session.get("visites"))"""
+        user = MyUser.objects.filter(login=users_data.data["login"])
+        if user:
+            if user[0].password == users_data.data["password"]:
+                request.session["login"] = users_data.data["login"]
+                return redirect("/main/")
+            else:
+                return render(request, "my_auth/login.html", {"error_message": "wrong password"})
+        else:
+            return render(request, "my_auth/login.html", {"error_message": "no user like this"})
 
-    if request.session.get("login", None):
+    """if request.session.get("login", None):
         return render(request, "my_auth/main.html", {})
-    return redirect("http://127.0.0.1:8000/login")
+    return redirect("http://127.0.0.1:8000/login")"""
