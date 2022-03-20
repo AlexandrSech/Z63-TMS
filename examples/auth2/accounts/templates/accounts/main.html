@@ -1,0 +1,14 @@
+{% extends  'base.html' %}
+{% load crispy_forms_tags %}
+
+{% block main %}
+<div class="card">
+<div class="card-body">
+<h4 class="card-title">Main</h4>
+
+    {{ text }}
+    <p><a  href="{% url 'logout' %}">Logout</a></p>
+</div>
+</div>
+
+{% endblock %}
