@@ -12,7 +12,7 @@ print("Исходная матрица: ")
 for line in matrix:
     print(*line, sep="\t\t")
 
-for i in range(0, len(matrix)):
+for i in range(len(matrix)):
     matrix[i][i] = max(matrix[i])
 
 print("Полученная матрица: ")
