@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Get products</title>
+</head>
+<body>
+
+<form name="products" method="post" action="http://127.0.0.1:8000/goods/set_current_amount_products/">
+    <input type="hidden" id="id" name="id" value="{{ id }}">
+    <p>Имя: {{ name }} , количество <input id="current_amount" name="current_amount" type="text" value="{{ current_amount }}"></p>
+
+    <input type="submit" value="ратата">
+</form>
+</body>
+</html>
+
+    <!--{% for p in products %} -->
+    <!--{% endfor %}-->

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        {% block title %} Base {% endblock %}
+    </title>
+
+    {% block head %} {% endblock %}
+</head>
+
+<body>
+    {% block content %}
+        Hello, its a base HTML
+    {% endblock %}
+</body>
+
+</html>

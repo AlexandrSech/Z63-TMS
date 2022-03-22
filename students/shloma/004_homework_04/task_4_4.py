@@ -1,10 +1,19 @@
 # Task 4.4
+# shlom41k
 
-# Use slice
+"""
+Дан список. Создать новый список, сдвинутый на 1 элемент влево
+"""
+
+from random import randint
+
+
+# my_list = [0, 1, 2, 3, 4, 5, 6, 7]
+my_list = [randint(-10, 10) for _ in range(10)]
 k = 1   # value of <- circshift
 
-my_list = [0, 1, 2, 3, 4, 5, 6, 7]
 
+# Use slice
 my_new_list = my_list[k:] + my_list[:k]
 
 print("List:", my_list)
@@ -23,6 +32,7 @@ while i < len(my_list):
     i += 1
 
 print("Changed list (while):", my_new_list2)
+
 
 # Use for
 my_new_list3 = list()
