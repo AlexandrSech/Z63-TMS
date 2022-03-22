@@ -26,7 +26,7 @@ def fibonacci3(n):
 
 num = 15
 print("Первая попытка:")
-print([fibonacci(i) for i in range(0, num)])
+print([fibonacci(i) for i in range(num)])
 
 print("Вторая попытка:")
 print(fibonacci2(num))

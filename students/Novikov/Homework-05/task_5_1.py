@@ -4,32 +4,17 @@
 Организовать возможность многократных вычислений без перезагрузки программа (т.е. построить бесконечный цикл).
 В качестве символа прекращения вычислений принять ‘0’ (т.е. sign='0')."""
 
-sign = ""
+sign = None
+X, Y = map(float, input("Введите X и Y через пробел: ").split())
+operations = {"+": X + Y, "-": X - Y, "*": X * Y, "/": X / Y}
 while True:
-    if sign == "0":
-        break
-    X = float(input("Введите первое число: "))
-    Y = float(input("Введите второе число: "))
     sign = input("Введите знак операции: ")
-    while True:
-        if sign in ("+", "-", "/", "*"):
-            if sign == "+":
-                print("Результат операции: {}\n".format(X + Y))
-                break
-            elif sign == "-":
-                print("Результат операции:{}\n".format(X - Y))
-                break
-            elif sign == "/":
-                if Y == 0:
-                    print("На ноль делить нельзя!")
-                    break
-                print("Результат операции:{}\n".format(X / Y))
-                break
-            elif sign == "*":
-                print("Результат операции:{}\n".format(X * Y))
-                break
-        elif sign == "0":
-            break
+    if sign in operations.keys():
+        if sign == "/" and Y == 0:
+            print("На ноль делить нельзя")
         else:
-            print("Повторите ввод")
-            break
+            print(operations[sign])
+    elif sign == "0":
+        break
+    else:
+        print("Повторите ввод")

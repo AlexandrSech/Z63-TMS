@@ -10,5 +10,6 @@ def fact2(n):
 
 
 my_list = [randint(0, 20) for _ in range(0, 5)]
+print(my_list)
 for el in my_list:
     print(fact2(el))

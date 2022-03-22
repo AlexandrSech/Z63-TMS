@@ -7,8 +7,6 @@ def find_divisors(num):
     print(*[i for i in range(2, num) if num % i == 0])
 
 
-m = int(input("Введите первое число: "))
-n = int(input("Введите второе число: "))
-
+m, n = map(int, input("Введите m и n через пробел: ").split())
 for num in range(m, n + 1):
     find_divisors(num)

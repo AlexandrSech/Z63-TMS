@@ -5,6 +5,6 @@ N = -1
 while not N > 0:
     N = int(input("Введите N: "))
 summa = 0
-for i in range(N + 1):
+for i in range(1, N + 1):
     summa += 1 / i
 print("Сумма ряда: ", summa)

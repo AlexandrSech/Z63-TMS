@@ -3,11 +3,7 @@
 Чтобы получить список ключей - использовать метод .keys()
 (подсказка: создается новый ключ с цифрой в конце, старый удаляется)"""
 
-my_dict = {'test': 'test_value',
-           'europe': 'eur',
-           'dollar': 'usd',
-           'ruble': 'rub'
-           }
+my_dict = {"test": "test_value", "europe": "eur", "dollar": "usd", "ruble": "rub"}
 my_dict2 = dict(my_dict)
 for key in list(my_dict.keys()):
     my_dict[key + str(len(key))] = my_dict.pop(key)
