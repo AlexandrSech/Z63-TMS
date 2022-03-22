@@ -15,3 +15,7 @@ while counter < len(my_list):
     new_list2.append(-2 * my_list[counter])
     counter += 1
 print(new_list2)
+
+new_list3 = list()
+for i in range(len(my_list)):
+    new_list3.append(-2 * my_list[i])
