@@ -6,8 +6,7 @@ from random import randint
 array = [randint(-100, 100) for _ in range(10)]
 print(array)
 
-number_of_ranges = 0
-cols_item = 0
+number_of_ranges, cols_item = 0, 0
 prev_item = None
 for item in array:
     try:

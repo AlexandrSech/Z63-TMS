@@ -9,7 +9,7 @@ def fact2(n):
     return 1 if n < 2 else n * fact2(n - 2)
 
 
-my_list = [randint(0, 20) for _ in range(0, 5)]
+my_list = [randint(0, 20) for _ in range(5)]
 print(my_list)
 for el in my_list:
     print(fact2(el))

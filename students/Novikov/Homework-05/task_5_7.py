@@ -4,16 +4,16 @@
 from random import randint
 
 n = 5
-matrix = list()
-for _ in range(n):
-    matrix.append([randint(-10, 10) for _ in range(n)])
+matrix = [[randint(-10, 10) for _ in range(n)] for _ in range(n)]
 
 print("Исходная матрица: ")
 for line in matrix:
     print(*line, sep="\t\t")
 
 for i in range(len(matrix)):
-    matrix[i][i] = max(matrix[i])
+    for j in range(len(matrix[i])):
+        if matrix[i][j] == max(matrix[i]):
+            matrix[i][j], matrix[i][i] = matrix[i][i], matrix[i][j]
 
 print("Полученная матрица: ")
 for line in matrix:

@@ -1,5 +1,4 @@
-a = 0.1
-b = 0.2
+a, b = 0.1, 0.2
 
 print("Sum", a + b)
 print("Difference", a - b)
