@@ -6,7 +6,7 @@ from random import randint
 my_list = [randint(0, 100) for _ in range(20)]
 print("Исходный список:\n", my_list)
 
-for i in range(0, len(my_list)):
+for i in range(len(my_list)):
     if my_list[i] % 2 == 0:
         my_list[i] = max(my_list)
 print("Изменённый список:\n", my_list)

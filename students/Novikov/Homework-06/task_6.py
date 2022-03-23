@@ -5,11 +5,11 @@ dimensions = 4, 5
 n, m = dimensions
 
 
-def make_matrix(n, m):
+def make_matrix(n, m) -> list[list[int]]:
     return [[randint(a, b) for _ in range(m)] for _ in range(n)]
 
 
-def print_matrix(matrix):
+def print_matrix(matrix) -> None:
     for line in matrix:
         print(*line, sep="\t\t")
 
@@ -31,9 +31,8 @@ print("Сумма элементов матрицы:", sum([sum(line) for line i
 summ = [sum(line) for line in matrix]
 
 # 5) Найти индекс ряда с максимальной суммой элементов.
-maximum = max([sum(line) for line in matrix])
 for index, sum_of_row in enumerate(summ):
-    if sum_of_row == maximum:
+    if sum_of_row == max(summ):
         print(f"{index} ряд с максимальной суммой элементов")
 
 # 6) Найти индекс колонки с максимальной суммой элементов.
@@ -44,9 +43,8 @@ print_matrix(matrix2)
 print("Сумма по колонкам:", [sum(line) for line in matrix2])
 summ2 = [sum(line) for line in matrix2]
 
-maximum = max(summ2)
 for index, sum_of_column in enumerate(summ2):
-    if sum_of_column == maximum:
+    if sum_of_column == max(summ2):
         print(f"{index} колонка с максимальной суммой элементов")
 
 # 7) Найти индекс ряда с минимальной суммой элементов.
