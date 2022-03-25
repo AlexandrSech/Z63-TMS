@@ -5,15 +5,14 @@
 В качестве символа прекращения вычислений принять ‘0’ (т.е. sign='0')."""
 
 sign = None
-X, Y = map(float, input("Введите X и Y через пробел: ").split())
+X, Y = 0, 0
+while Y == 0:
+    X, Y = map(float, input("Введите X и Y через пробел: ").split())
 operations = {"+": X + Y, "-": X - Y, "*": X * Y, "/": X / Y}
 while True:
     sign = input("Введите знак операции: ")
     if sign in operations.keys():
-        if sign == "/" and Y == 0:
-            print("На ноль делить нельзя")
-        else:
-            print(operations[sign])
+        print(operations[sign])
     elif sign == "0":
         break
     else:
