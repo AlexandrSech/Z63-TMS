@@ -10,7 +10,8 @@ def my_decorator(my_func):
 
 @my_decorator
 def print_args(*args):
-    [print(*arg) for arg in args]
+    for arg in args:
+        print(*arg)
 
 
 args = ("first", 1, [4], 6, 8, {1: True}, "a", "last")

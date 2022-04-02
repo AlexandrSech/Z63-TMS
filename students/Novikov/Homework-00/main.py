@@ -1,7 +1,11 @@
 a, b = 0.1, 0.2
 
-print("Sum", a + b)
-print("Difference", a - b)
-print("Multiplication", a * b)
-print("Degree", a ** b)
-print("Division", a / b)
+dict1 = {
+    "Sum": a + b,
+    "Difference": a - b,
+    "Multiplication": a * b,
+    "Degree": a ** b,
+    "Division": a / b,
+}
+for key, value in dict1.items():
+    print(key, value)

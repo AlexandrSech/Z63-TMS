@@ -11,9 +11,9 @@ while Y == 0:
 operations = {"+": X + Y, "-": X - Y, "*": X * Y, "/": X / Y}
 while True:
     sign = input("Введите знак операции: ")
-    if sign in operations.keys():
+    if sign in operations:
         print(operations[sign])
     elif sign == "0":
         break
     else:
-        print("Повторите ввод")
+        print("Неверный знак операции!")

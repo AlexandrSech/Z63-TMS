@@ -4,7 +4,5 @@
 N = -1
 while not N > 0:
     N = int(input("Введите N: "))
-summa = 0
-for i in range(1, N + 1):
-    summa += 1 / i
-print("Сумма ряда: ", summa)
+
+print("Сумма ряда: ", sum(1 / i for i in range(1, N + 1)))
