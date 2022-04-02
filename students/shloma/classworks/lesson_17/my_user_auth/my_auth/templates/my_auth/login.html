@@ -1,0 +1,27 @@
+{% extends "my_auth/base.html" %}
+
+
+{% block title %} Login {% endblock %}
+
+{% block content %}
+<div class="text-center">
+    <form class="form-login" method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+
+        <h1 class="h3 mb-3 mt-3 mx-auto font-weight-normal">Для входа введите имя пользователя и пароль</h1>
+
+        {% for field in form %}
+        <p>
+            <label for="{{ field.label }}" class="sr-only">{{ field.label }}</label>
+            {{ field }}
+
+            {% for error in field.errors %}
+                {{ error }}
+            {% endfor %}
+        </p>
+        {% endfor %}
+
+        <button class="btn mt-2 btn-lg btn-primary btn-block" type="submit">Вход</button>
+    </form>
+</div>
+{% endblock %}

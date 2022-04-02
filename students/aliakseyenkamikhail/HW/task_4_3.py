@@ -4,9 +4,9 @@
 #  ключей - использовать метод .keys()
 
 my_dict = {'test': 'test_value', 'europe': 'eur', 'dollar': 'usd', 'ruble': 'rub'}
+my_dict2={}
+for i in my_dict:
+    my_dict2.update({i + str(len(i)): my_dict[i]})
 
-for items in my_dict:
-    
-    print(items)
-
-print (my_dict)
+my_dict=my_dict2
+print(my_dict)

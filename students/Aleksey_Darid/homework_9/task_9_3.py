@@ -8,8 +8,8 @@ def deco(foo):
     return inner
 
 @deco
-def lis(*arg):
-    l = list(arg)  
+def lis(*args):
+    l = list(args)  
     return print(l)
 
 lis(12,3,4,5,6)
