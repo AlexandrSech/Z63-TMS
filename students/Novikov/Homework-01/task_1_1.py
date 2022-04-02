@@ -2,6 +2,6 @@
 
 x, y = map(float, input("Введите x и y через пробел: ").split())
 
-print("Сумма", x + y)
-print("Разность", x - y)
-print("Произведение", x * y)
+dict1 = {"Сумма": x + y, "Разность": x - y, "Произведение": x * y}
+for key, value in dict1.items():
+    print(f"{key}: {value}")

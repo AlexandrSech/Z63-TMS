@@ -21,13 +21,13 @@ print("Исходная матрица: ")
 print_matrix(matrix)
 
 # 2) Найти максимальный элемент матрицы.
-print("Максимальный элемент матрицы:", max([max(line) for line in matrix]))
+print("Максимальный элемент матрицы:", max(max(line) for line in matrix))
 
 # 3) Найти минимальный элемент матрицы.
-print("Минимальный элемент матрицы:", min([min(line) for line in matrix]))
+print("Минимальный элемент матрицы:", min(min(line) for line in matrix))
 
 # 4) Найти сумму всех элементов матрицы.
-print("Сумма элементов матрицы:", sum([sum(line) for line in matrix]))
+print("Сумма элементов матрицы:", sum(sum(line) for line in matrix))
 summ = [sum(line) for line in matrix]
 
 # 5) Найти индекс ряда с максимальной суммой элементов.

@@ -7,6 +7,5 @@ def is_palindrome(word):
     return word == word[::-1]
 
 
-my_list = input("Введите 3 слова: ").lower().split()
-
-print("Есть слово палиндром") if any(is_palindrome(word) for word in my_list) else print("Нет слов-палиндромов")
+print("Есть слово палиндром") if any(
+    is_palindrome(word) for word in input("Введите 3 слова: ").lower().split()) else print("Нет слов-палиндромов")

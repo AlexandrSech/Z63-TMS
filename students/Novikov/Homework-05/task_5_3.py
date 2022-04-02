@@ -3,7 +3,7 @@
 
 
 def foo(num):
-    return sum([n for n in range(1, num) if num % n == 0])
+    return sum(n for n in range(1, num) if num % n == 0)
 
 
 my_dict = dict()
