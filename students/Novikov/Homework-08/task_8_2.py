@@ -2,10 +2,5 @@
 т. е. таким, которое читается одинаково слева направо и справа налево.
 (Определить функцию, позволяющую распознавать слова палиндромы.)"""
 
-
-def is_palindrome(word):
-    return word == word[::-1]
-
-
 print("Есть слово палиндром") if any(
-    is_palindrome(word) for word in input("Введите 3 слова: ").lower().split()) else print("Нет слов-палиндромов")
+    word == word[::-1] for word in input("Введите 3 слова: ").lower().split()) else print("Нет слов-палиндромов")
