@@ -1,0 +1,18 @@
+{% extends "task21/base.html" %}
+
+
+{% block title %}
+    All persons
+{% endblock %}
+
+
+{% block content %}
+    <h2>List of all persons</h2>
+
+    <ul>
+        {% for person in persons %}
+            <li><a href="{{ person.get_url }}">{{ person }}</a></li>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
